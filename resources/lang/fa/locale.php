@@ -1,9 +1,9 @@
 <?php
 
     return [
-        "Apps & Pages" => "Apps & Pages",
-        "User Interface" => "User Interface",
-        "Dashboards" => "Dashboards",
+        "Apps & Pages" => "اپلیکیشن ها و صفحات",
+        "User Interface" => "محیط کاربری",
+        "Dashboards" => "داشبورد",
         "Analytics" => "Analytics",
         "eCommerce" => "eCommerce",
         "Apps" => "Apps",
