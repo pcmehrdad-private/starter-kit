@@ -1,19 +1,19 @@
 @extends('admin.layouts.master')
 
-@section('vendor-styles')
+@section('vendor-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/charts/apexcharts.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/vendors/css/extensions/toastr.min.css') }}">
 @endsection
 
 
-@section('page-styles')
+@section('page-style')
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/pages/dashboard-ecommerce.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/plugins/charts/chart-apex.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/app-assets/css/plugins/extensions/ext-component-toastr.css') }}">
 @endsection
 
 
-@section('page-content')
+@section('content')
     <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
@@ -755,12 +755,12 @@
 @endsection
 
 
-@section('vendor-scripts')
+@section('vendor-script')
     <script src="{{ asset('admin/app-assets/vendors/js/charts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('admin/app-assets/vendors/js/extensions/toastr.min.js') }}"></script>
 @endsection
 
 
-@section('page-scripts')
+@section('page-script')
     <script src="{{ asset('admin/app-assets/js/scripts/pages/dashboard-ecommerce.js') }}"></script>
 @endsection

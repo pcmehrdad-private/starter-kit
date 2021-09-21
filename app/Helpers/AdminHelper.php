@@ -11,3 +11,9 @@
             die();
         }
     }
+
+    if(!function_exists('getAdminThemeOptions')){
+        function getAdminThemeOptions(){
+            return true;
+        }
+    }

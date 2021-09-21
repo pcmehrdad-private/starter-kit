@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+@php
+    $configData = config('admin.themeOptions');
+@endphp
+<html class="loading" lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{$configData['defaultLanguage']}}@endif" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 <head>
@@ -35,7 +38,7 @@
 <!-- END: Main Menu-->
 
 <!-- BEGIN: Content-->
-@yield('page-content')
+@yield('content')
 <!-- END: Content-->
 
 <div class="sidenav-overlay"></div>
