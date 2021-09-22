@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Http\Traits\HasRecursiveRelationships;
 // https://github.com/paxha/laravel-recursive-relationships
+
 class Menu extends Model
 {
-    use HasFactory;
+    use HasFactory,HasRecursiveRelationships;
 
     protected $guarded = ['id'];
     public $timestamps = false;
@@ -22,28 +23,13 @@ class Menu extends Model
 
 class MenuItem extends Model
 {
-    use HasFactory;
+    use HasFactory,HasRecursiveRelationships;
     protected $guarded = ['id'];
     public $timestamps = false;
 
     public function menu()
     {
         return $this->belongsTo(Menu::class);
-    }
-
-    public function parent()
-    {
-        return $this->belongsTo(self::class, 'parent_id');
-    }
-
-    public function children()
-    {
-        return $this->hasMany(self::class, 'parent_id','id');
-    }
-
-    public function nestedChildren()
-    {
-        return $this->children()->with('nestedChildren');
     }
 
 }
