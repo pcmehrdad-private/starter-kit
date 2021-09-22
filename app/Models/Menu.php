@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+// https://github.com/paxha/laravel-recursive-relationships
 class Menu extends Model
 {
     use HasFactory;
@@ -40,10 +41,9 @@ class MenuItem extends Model
         return $this->hasMany(self::class, 'parent_id','id');
     }
 
-    public function childrenRecursive()
+    public function nestedChildren()
     {
-        //return $this->hasMany(self::class, 'parent_id','id')->with('childrenRecursive');
-        return $this->children()->with('childrenRecursive');
+        return $this->children()->with('nestedChildren');
     }
 
 }
