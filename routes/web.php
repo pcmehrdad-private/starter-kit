@@ -25,3 +25,17 @@ Route::group(['prefix' => 'admin','as'=>'admin.'], function (){
     Route::get('dashboard',\App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
 });
 
+Route::get('test',function (){
+    //$menu = \App\Models\Menu::with('items')->where('panel','super-admin')->first();
+    //$menu_items = $menu->items()->children;
+    $menu = \App\Models\Menu::where('panel','super-admin')->with('items' , function ($q){
+        $q->whereNull('parent_id')->with('childrenRecursive');
+    })->get();
+    die_r($menu->toArray());
+    // ready to use https://github.com/paxha/laravel-recursive-relationships
+
+    //$menu_items = $menu->items()->children;
+    //dd($menu_items);
+
+});
+
