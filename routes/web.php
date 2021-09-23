@@ -40,4 +40,11 @@ Route::domain('auth.'.env("APP_MAIN_DOMAIN"))->group(function() {
         return view('welcome');
     })->middleware(['auth:sanctum', 'verified']);
 
+    // todo:
+    // run auth seperate
+    // write readme
+    // multiple route files for multiple subdomains
+    // integrate ci/cd
+    // integrate other config files like github repo or ...
+
 });
