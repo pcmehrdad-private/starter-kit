@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => config('app.SESSION_DOMAIN'),
+    'domain' => config('app.session_domain'),
 
     /*
     |--------------------------------------------------------------------------

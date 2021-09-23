@@ -53,9 +53,9 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-    'APP_MAIN_DOMAIN' => env('APP_MAIN_DOMAIN', 'localhost'), // todo
-    'SESSION_DOMAIN' => env('SESSION_DOMAIN', '.localhost'), // todo
-    'AUTH_SUBDOMAIN' => env('AUTH_SUBDOMAIN', 'auth'), // todo
+    'main_domain' => env('APP_MAIN_DOMAIN', 'localhost'), // todo
+    'session_domain' => env('APP_SESSION_DOMAIN', '.localhost'), // todo
+    'auth_subdomain' => env('APP_AUTH_SUBDOMAIN', 'auth'), // todo
 
 
     'asset_url' => env('ASSET_URL', null),

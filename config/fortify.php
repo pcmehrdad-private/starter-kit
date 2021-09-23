@@ -76,7 +76,7 @@ return [
 
     'prefix' => '',
 
-    'domain' => config('app.AUTH_SUBDOMAIN').'.'.config('app.APP_MAIN_DOMAIN'),
+    'domain' => config('app.auth_subdomain').'.'.config('app.main_domain'),
 
     /*
     |--------------------------------------------------------------------------
