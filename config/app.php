@@ -57,7 +57,7 @@ return [
     'session_domain' => env('APP_SESSION_DOMAIN', '.localhost'), // todo
     'auth_subdomain' => env('APP_AUTH_SUBDOMAIN', 'auth'), // todo
 
-
+    'subdomains'=> ['sample',],
     'asset_url' => env('ASSET_URL', null),
 
 

@@ -39,8 +39,14 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             // subdomains here
-            Route::domain('auth.'.config('app.main_domain'))
-                ->group(base_path('routes/subdomains/auth.php'));
+            foreach (config('app.subdomains') as $subdomain) {
+                Route::domain($subdomain.'.'.config('app.main_domain'))
+                    ->group(base_path('routes/subdomains/'.$subdomain.'.php'));
+            }
+
+            // auth subdomain here
+            Route::domain(config('app.auth_subdomain').'.'.config('app.main_domain'))
+                ->group(base_path('routes/auth-subdomain.php'));
 
             Route::prefix('api')
                 ->middleware('api')
