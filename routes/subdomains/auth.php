@@ -1,9 +1,11 @@
 <?php
+    // subdomain : auth
+
     use Illuminate\Support\Facades\Route;
     use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
     Route::get('/', function () {
-        return "to Login";
+        return "Auth Subdomain Here!";
     });
 
     /*Route::group(['middleware' => ['auth:sanctum', 'verified']], function (){

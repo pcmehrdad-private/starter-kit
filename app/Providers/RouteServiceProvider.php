@@ -39,7 +39,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             // subdomains here
-            Route::domain('auth.'.env("APP_MAIN_DOMAIN"))
+            Route::domain('auth.'.config('app.APP_MAIN_DOMAIN'))
                 ->group(base_path('routes/subdomains/auth.php'));
 
             Route::prefix('api')

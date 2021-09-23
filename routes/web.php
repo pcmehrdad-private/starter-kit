@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+    // dashboard logged in
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+
+//======================= HomePage Routes Here
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('test',function (){
 
@@ -26,10 +32,4 @@ Route::get('test',function (){
     die_r($menu->toArray());
     // ready to use https://github.com/paxha/laravel-recursive-relationships
 
-});
-
-
-
-Route::get('/', function () {
-    return view('welcome');
 });

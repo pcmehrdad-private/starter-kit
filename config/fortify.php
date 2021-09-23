@@ -76,7 +76,7 @@ return [
 
     'prefix' => '',
 
-    'domain' => env('AUTH_SUBDOMAIN','auth').'.'.env('APP_MAIN_DOMAIN'),
+    'domain' => config('app.AUTH_SUBDOMAIN').'.'.config('app.APP_MAIN_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
