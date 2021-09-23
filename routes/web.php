@@ -13,18 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::group(['prefix' => 'admin','as'=>'admin.'], function (){
-    Route::get('dashboard',\App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
-
-});
 
 Route::get('test',function (){
 
@@ -36,16 +28,8 @@ Route::get('test',function (){
 
 });
 
-Route::domain('auth.'.env("APP_MAIN_DOMAIN"))->group(function() {
-    Route::get('/', function() {
-        return view('welcome');
-    })->middleware(['auth:sanctum', 'verified']);
 
-    // todo:
-    // run auth seperate
-    // write readme
-    // multiple route files for multiple subdomains
-    // integrate ci/cd
-    // integrate other config files like github repo or ...
 
+Route::get('/', function () {
+    return view('welcome');
 });
