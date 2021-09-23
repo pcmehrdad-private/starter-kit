@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['prefix' => 'admin','as'=>'admin.'], function (){
     Route::get('dashboard',\App\Http\Controllers\Admin\DashboardController::class)->name('dashboard');
+
 });
 
 Route::get('test',function (){

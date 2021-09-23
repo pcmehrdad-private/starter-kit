@@ -2,7 +2,8 @@
 @php
     $configData = config('admin.themeOptions');
 @endphp
-<html class="loading" lang="@if(session()->has('locale')){{session()->get('locale')}}@else{{$configData['defaultLanguage']}}@endif" data-textdirection="ltr">
+<html class="loading" lang="en"
+      data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
 <head>

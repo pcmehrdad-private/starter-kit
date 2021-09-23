@@ -1,12 +1,12 @@
 <?php
 
     if(!function_exists('die_r')){
-        function die_r($in = NULL){
-            if(empty($in)) die();
-            if(is_array($in) || is_object($in)){
-                print_r($in);
+        function die_r($input = NULL){
+            if(empty($input)) die();
+            if(is_array($input) || is_object($input)){
+                print_r($input);
             } else{
-                echo($in);
+                echo($input);
             }
             die();
         }
