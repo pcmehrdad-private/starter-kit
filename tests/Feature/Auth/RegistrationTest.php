@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -18,7 +18,7 @@ class RegistrationTest extends TestCase
             return $this->markTestSkipped('Registration support is not enabled.');
         }
 
-        $response = $this->get('/register');
+        $response = $this->get('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/register');
 
         $response->assertStatus(200);
     }
@@ -29,7 +29,7 @@ class RegistrationTest extends TestCase
             return $this->markTestSkipped('Registration support is enabled.');
         }
 
-        $response = $this->get('/register');
+        $response = $this->get('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/register');
 
         $response->assertStatus(404);
     }
@@ -40,7 +40,7 @@ class RegistrationTest extends TestCase
             return $this->markTestSkipped('Registration support is not enabled.');
         }
 
-        $response = $this->post('/register', [
+        $response = $this->post('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => 'password',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -17,7 +17,7 @@ class PasswordConfirmationTest extends TestCase
                         ? User::factory()->withPersonalTeam()->create()
                         : User::factory()->create();
 
-        $response = $this->actingAs($user)->get('/user/confirm-password');
+        $response = $this->actingAs($user)->get('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') . '/user/confirm-password');
 
         $response->assertStatus(200);
     }
@@ -26,7 +26,7 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->post('/user/confirm-password', [
+        $response = $this->actingAs($user)->post('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/user/confirm-password', [
             'password' => 'password',
         ]);
 
@@ -38,7 +38,7 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->post('/user/confirm-password', [
+        $response = $this->actingAs($user)->post('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/user/confirm-password', [
             'password' => 'wrong-password',
         ]);
 

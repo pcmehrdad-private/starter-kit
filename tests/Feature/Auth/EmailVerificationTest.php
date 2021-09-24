@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -20,12 +20,11 @@ class EmailVerificationTest extends TestCase
         if (! Features::enabled(Features::emailVerification())) {
             return $this->markTestSkipped('Email verification not enabled.');
         }
-
+        $this->withoutExceptionHandling();
         $user = User::factory()->withPersonalTeam()->create([
             'email_verified_at' => null,
         ]);
-
-        $response = $this->actingAs($user)->get('/email/verify');
+        $response = $this->actingAs($user)->get('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') . '/email/verify');
 
         $response->assertStatus(200);
     }
