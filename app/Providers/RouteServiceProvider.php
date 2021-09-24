@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            
             // subdomains here
             foreach (config('app.subdomains') as $subdomain) {
                 Route::domain($subdomain.'.'.config('app.main_domain'))
