@@ -11,5 +11,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     })->name('dashboard');
 });
 
+
 Route::any('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 //Route::redirect('logout', route('logout'));
