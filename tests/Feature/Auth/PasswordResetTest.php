@@ -18,7 +18,7 @@ class PasswordResetTest extends TestCase
         if (! Features::enabled(Features::resetPasswords())) {
             return $this->markTestSkipped('Password updates are not enabled.');
         }
-
+        // these are default auth subdomain , will change to better one
         $response = $this->get('http://'.config('app.auth_subdomain').'.'.config('app.main_domain') .'/forgot-password');
 
         $response->assertStatus(200);
