@@ -24,6 +24,7 @@ class CreateMenusTable extends Migration
             $table->unique(['panel','section']);
         });
 
+
         Schema::create('menu_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('menu_id')->constrained();
