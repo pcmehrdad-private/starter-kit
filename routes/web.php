@@ -18,11 +18,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
 //======================= HomePage Routes Here
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('test',function (){
 
