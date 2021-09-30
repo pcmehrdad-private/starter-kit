@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    // dashboard logged in
+// dashboard logged in
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
 
 //======================= HomePage Routes Here
 Route::get('/', function () {
